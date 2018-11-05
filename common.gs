@@ -5,6 +5,6 @@ function get_basicauth(client_id, client_secret) {
 
 //
 function get_bearerauth(access_token) {
-  return "bearer " + access_token
+  return "Bearer " + access_token
 }
 

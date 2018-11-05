@@ -28,10 +28,10 @@ function r_get_accesstoken(basic_auth, refresh_token) {
 //
 function r_get_bearer(creds) {
   if(creds == undefined) {
-    creds = credential
+    creds = secret.creds_main
   }
   
-  if((creds.username == credential.username) && (ACCESS_TOKEN != undefined)) {
+  if((creds.username == secret.creds_main.username) && (ACCESS_TOKEN != undefined)) {
     return get_bearerauth(ACCESS_TOKEN)
   }
   
@@ -44,5 +44,5 @@ function r_get_bearer(creds) {
     creds.refresh_token
   )
  
-  return r_get_bearerauth(access_token)
+  return get_bearerauth(access_token)
 }
