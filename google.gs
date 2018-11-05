@@ -1,8 +1,8 @@
-var g_access_token = undefined;
+var g_g_access_token = undefined;
 
 function g_get_accesstoken() {
-  if(g_access_token) {
-    return g_access_token  
+  if(g_g_access_token) {
+    return g_g_access_token  
   }
   
   var url = "https://www.googleapis.com/oauth2/v4/token"

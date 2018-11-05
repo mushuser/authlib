@@ -25,14 +25,15 @@ function r_get_accesstoken(basic_auth, refresh_token) {
   return access_token
 }
 
+var g_r_access_token = undefined
 //
 function r_get_bearer(creds) {
   if(creds == undefined) {
     creds = secret.creds_main
   }
   
-  if((creds.username == secret.creds_main.username) && (ACCESS_TOKEN != undefined)) {
-    return get_bearerauth(ACCESS_TOKEN)
+  if((creds.username == secret.creds_main.username) && (g_r_access_token != undefined)) {
+    return get_bearerauth(g_r_access_token)
   }
   
   var basic_auth = get_basicauth(
